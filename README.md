@@ -1,1 +1,1 @@
-## Playground for algorithms and data structures studying 
+# Playground for algorithms and data structures studying
