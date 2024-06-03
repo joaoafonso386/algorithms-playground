@@ -1,4 +1,5 @@
 /**
+ * 
  * Use the Multiple Pointers pattern to solve the challange
  *
  * take the first and last element of the array to make the calculations needed

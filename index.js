@@ -1,5 +1,5 @@
 /**
- * Codigo para teste de performance
+ * Code for performance testing
  *
  */
 
