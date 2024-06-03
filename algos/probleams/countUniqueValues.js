@@ -4,6 +4,7 @@
  * take the first and last element of the array to make the calculations needed
  * don't go for a O(n^2) solution -- nested for loop
  * function takes a sorted array as parameter
+ * 
  */
 
 function countUniqueValues(array) {

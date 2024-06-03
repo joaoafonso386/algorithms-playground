@@ -1,4 +1,10 @@
-//Given two strings, write a function to determine if the second string is an anagram of the first. An anagram is a word, a phrase, or a name formed by rearranging the letters of another, such as  cinema, formed from iceman.
+/**
+ * 
+ * Given two strings 
+ * Write a function to determine if the second string is an anagram of the first
+ * An anagram is a word, a phrase, or a name formed by rearranging the letters of another, such as  cinema, formed from iceman. 
+ * 
+ */
 
 const validAnagram = (string1, string2) => {
   //check if the same chars in string1 are present in string2
@@ -9,12 +15,12 @@ const validAnagram = (string1, string2) => {
     (char, index) => char === sortedString2[index]
   );
 
-  isIncluded ? console.log(true) : console.log(false);
+  return isIncluded
 };
 
-// validAnagram("anagram", "nagaram");
+validAnagram("anagram", "nagaram");
 
-//Using frequency counter patern
+//Using frequency counter pattern
 const validAnagramFC = (first, second) => {
   if (first.length !== second.length) {
     return false;
@@ -26,8 +32,6 @@ const validAnagramFC = (first, second) => {
     dictionaryStr1[char] = (dictionaryStr1[char] || 0) + 1;
   }
 
-  console.log(dictionaryStr1);
-
   for (let char of second) {
     if (!dictionaryStr1[char]) {
       console.log(false);
@@ -36,7 +40,6 @@ const validAnagramFC = (first, second) => {
     }
   }
 
-  console.log("true");
 };
 
 validAnagramFC("azz", "zaa");
