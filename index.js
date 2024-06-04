@@ -1,33 +1,4 @@
 /**
- * Code for performance testing
- *
- */
-
-// const tCreate = performance.now()
-
-// for(let i = 0; i <= 9000 ; i++) {
-//  console.log(i)
-// }
-
-// const tExecute = performance.now()
-// console.log((tExecute - tCreate) / 1000)
-
-/**
- *
- * Em termos de tempo, diferentes PC's vão ter diferentes outputs para usando performance.now() porque existem PC's mais poderosos que outros
- * O mesmo PC vai dar sempre números variáveis porque as condições de memória vão variar tornando as medições imprecisas
- * Para algoritmos muito rapidos, rapidez pode não ser preciso o suficiente
- *
- *
- */
-
-// for (let i = 0; i < 2; i++) {
-//   for (let j = 0; j < 2; j++) {
-//     console.log(i, j);
-//   }
-// }
-
-/**
  *
  * TIME COMPLEXITY
  *
