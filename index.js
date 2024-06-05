@@ -1,15 +1,3 @@
-
-
-/**
- *
- * SPACE COMPLEXITY
- *
- * primitivos têm smp space complexity de O(1) -> booleans, numbers, undefined, null
- * strings, arrays e objectos é O(n) (linear) ->  quanto maior a string/array/obj mais espaço ocupa
- *
- *
- */
-
 function numberOfCharsStr(string) {
   let output = {};
   for (let i = 0; i < string.length; i++) {

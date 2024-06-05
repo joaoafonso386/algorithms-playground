@@ -11,6 +11,7 @@
 
 
 ## -- How different computers will measure performance --
+
     - In terms of time, different computers will have different outputs when using performance.now() because some computers are more powerful than others.
     - The same computer will always give variable numbers because memory conditions will vary, making the measurements imprecise.
     - For very fast algorithms, performance.now() may not be precise enough.
@@ -25,7 +26,14 @@
 ```
 
 ## -- What is time complexity (like a graph) --
+
     - O(n) -> increasing in a straight line, the number of operations is directly linked to the value of n (straight line going up).
     - O(1) -> the number of operations is always the same regardless of the value of n (flat line).
     - O(n²) -> for each operation of n, we multiply the value of n (nested loop, for example. When i = 0 and n is 5, the loop will run 25 times because for each value of i, the loop of j will run 5 times).
+
+
+## -- What is space complexity (like a graph) --
+
+    - Primitives will always have a space complexity of O(1) -> booleans, numbers, undefined, null.
+    - Strings, arrays, and objects have a space complexity of O(n) (linear) -> the larger the string/array/object, the more space it occupies.
 
