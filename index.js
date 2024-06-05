@@ -1,13 +1,4 @@
-/**
- *
- * TIME COMPLEXITY
- *
- * o(n) -> a subir um reta, o numero de operações esta diretamente ligado com o valor de n (linha a subir reta)
- * o(1) -> o numero de operações é sempre o mesmo independentemente do valor de n (flat line)
- * o(n²) -> por cada operação de n, multiplicamos o valor de n (nested loop por ex. Quando i = 0 e n é 5, o loop vai correr 25 vezes pq por cada valor de i, o loop de j vai correr 5 vezes)
- *
- *
- */
+
 
 /**
  *

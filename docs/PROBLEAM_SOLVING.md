@@ -24,3 +24,8 @@
  console.log((tExecute - tCreate) / 1000)
 ```
 
+## -- What is time complexity (like a graph) --
+    - O(n) -> increasing in a straight line, the number of operations is directly linked to the value of n (straight line going up).
+    - O(1) -> the number of operations is always the same regardless of the value of n (flat line).
+    - O(n²) -> for each operation of n, we multiply the value of n (nested loop, for example. When i = 0 and n is 5, the loop will run 25 times because for each value of i, the loop of j will run 5 times).
+
