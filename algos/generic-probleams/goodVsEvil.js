@@ -17,4 +17,4 @@ function goodVsEvil(good, evil) {
     }
   
     return "Battle Result: No victor on this battle field";
-  }
+}
