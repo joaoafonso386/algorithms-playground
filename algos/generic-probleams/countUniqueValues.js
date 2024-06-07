@@ -1,6 +1,6 @@
 /**
  * 
- * Use the Multiple Pointers pattern to solve the challange
+ * Use the Multiple Pointers pattern to solve the challenge
  *
  * take the first and last element of the array to make the calculations needed
  * don't go for a O(n^2) solution -- nested for loop

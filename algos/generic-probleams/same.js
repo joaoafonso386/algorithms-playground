@@ -15,8 +15,8 @@ function same(array1, array2) {
   let match = false;
   match = squaredArr.every((num, index) => num === array2[index]);
 
-  if (match) return console.log("true");
-  return console.log("false");
+  if (match) return true;
+  return false;
 }
 
-same([2, 4, 4], [4, 16, 16]);
+console.log(same([2, 4, 4], [4, 16, 16]))
