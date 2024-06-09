@@ -1,11 +1,18 @@
+/**
+ * 
+ * Given two strings representing the number of units of different types of good and evil forces
+ * determine the outcome of a battle between them.
+ * 
+ */
+
 function goodVsEvil(good, evil) {
     //remove spaces
     const filterGood = good.split(" ");
     const filterEvil = evil.split(" ");
   
     //sum all numbers
-    const sumGood = filterGood.reduce((prev, curr) => +prev + +curr);
-    const sumEvil = filterEvil.reduce((prev, curr) => +prev + +curr);
+    const sumGood = filterGood.reduce((prev, curr) => +prev + +curr, 0);
+    const sumEvil = filterEvil.reduce((prev, curr) => +prev + +curr, 0);
   
     //return string according values
     if (sumGood > sumEvil) {
@@ -18,3 +25,5 @@ function goodVsEvil(good, evil) {
   
     return "Battle Result: No victor on this battle field";
 }
+
+console.log(goodVsEvil("1 2 3 4", "5 5 5 5"))
