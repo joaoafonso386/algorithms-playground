@@ -8,7 +8,7 @@
  * 
  */
 
-function countUniqueValues(array) {
+export const countUniqueValues = (array) => {
   //if the current is different then the next increment the counter
   //else do nothing
   let counter = 0;

@@ -5,7 +5,7 @@
  * 
  */
 
-function goodVsEvil(good, evil) {
+export const goodVsEvil = (good, evil) => {
     //remove spaces
     const filterGood = good.split(" ");
     const filterEvil = evil.split(" ");

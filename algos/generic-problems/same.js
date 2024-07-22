@@ -9,7 +9,7 @@
  * 
  */
 
-function same(array1, array2) {
+export const same = (array1, array2) => {
   // o(n) solution
   const squaredArr = array1.map((num) => Math.pow(num, 2));
   let match = false;

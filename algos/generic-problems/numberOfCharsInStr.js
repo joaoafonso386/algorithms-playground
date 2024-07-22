@@ -4,7 +4,7 @@
  * 
  */
 
-function numberOfCharsStr(string) {
+export const numberOfCharsStr = (string) => {
     let output = {};
     for (let i = 0; i < string.length; i++) {
         const char = string[i];
