@@ -29,5 +29,7 @@ const reverse2 = (str) => {
 }
 
 console.log(reverse('awesome'));
+console.log(reverse('rithmschool'));
 console.log(reverse2('awesome'));
+console.log(reverse2('rithmschool'));
  
