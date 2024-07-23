@@ -19,7 +19,5 @@ Array.prototype.linearSearch = function (value) {
   return -1;
 };
 
-const arr = [1, 2, 3, 4, 5, 6];
-
-const index = arr.linearSearch(3);
+const index = [1, 2, 3, 4, 5, 6].linearSearch(4);
 console.log(index);
