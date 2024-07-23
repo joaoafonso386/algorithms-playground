@@ -6,9 +6,18 @@
  * 
  */
 
-export const factorial = (num) => {
-  if (num === 1) return 1;
-  return num * factorial(num - 1);
+export const factorialIterative = (num) => {
+  let total = 1
+  for(let i = 1; i <= num; i++) {
+    total *= i 
+  }
+  return total
 }
 
-console.log(factorial(5002));
+export const factorialRecursive = (num) => {
+  if (num === 1) return 1;
+  return num * factorialRecursive(num - 1);
+}
+
+console.log(factorialRecursive(10));
+console.log(factorialIterative(10));
