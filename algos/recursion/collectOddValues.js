@@ -5,25 +5,25 @@
  * 
  */
 
+const helper = (helperArr, res) => {
+
+    const first = helperArr[0]
+
+    if(helperArr.length === 0) return res
+
+    if(first % 2 !== 0) res.push(first)
+
+    helper(helperArr.slice(1), res)
+}
+
 export const collectOddValues = (arr) => {
 
     const res = []
 
-    const helper = (helperArr) => {
-
-        const first = helperArr[0]
-
-        if(helperArr.length === 0) return
-
-        if(first % 2 !== 0) res.push(first)
-
-        helper(helperArr.slice(1))
-    }
-
-    helper(arr)
+    helper(arr, res)
 
     return res
 }
 
 
-console.log(collectOddValues([1,4,5,9,4,3,6,23]))
+console.log(collectOddValues([1,13,5,9,4,3,6,23]))
