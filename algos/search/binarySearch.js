@@ -35,4 +35,4 @@ const binarySearch = (arr, val) => {
 
 }
 
-console.log(binarySearch([1,2,3,4,5,6,7,8,9,10], 1))
+console.log(binarySearch([1,2,3,4,5,6,7,8,9,10,24,56,65,69], 23))
