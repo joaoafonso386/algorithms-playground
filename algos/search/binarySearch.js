@@ -36,6 +36,7 @@ const binarySearch = (arr, val) => {
 console.log(binarySearch([1,2,3,4,5,6,7,8,9,10,24,56,65,69], 23))
 
 /** Visual explanation of the algorithm when searching for 23 */
+
 // [1,2,3,4,5,6,7,8,9,10,24,56,65,69]
 // { start: 0, mid: 7, end: 13 }
 // [9,10,24,56,65,69]

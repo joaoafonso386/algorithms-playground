@@ -11,8 +11,7 @@ export const numberOfCharsStr = (string) => {
         output[char] = output[char] ? output[char] + 1 : 1;
     }
 
-return output;
-
+    return output;
 }
 
 console.log(numberOfCharsStr("aaaaaddee!!"));
