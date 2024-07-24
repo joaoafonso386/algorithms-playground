@@ -17,22 +17,30 @@
 const binarySearch = (arr, val) => {
     let start = 0
     let end = arr.length - 1
-    let mid = Math.round((start + end) / 2)
-    console.log(mid)
 
-    while(arr[mid] !== val && start <= end) {
-        if(val < arr[mid]) {
-            end = mid - 1
-        } else {
-            start = mid + 1
-        }
+    while(start <= end) {
 
-        mid = Math.round((start + end) / 2)
-        console.log(mid)
+        let mid = Math.round((start + end) / 2)
+
+        if(arr[mid] === val) return mid;
+
+        if(val < arr[mid]) end = mid - 1
+        if(val > arr[mid]) start = mid + 1
+
     }
 
-    return arr[mid] === val ? mid : -1
+    return -1
 
 }
 
 console.log(binarySearch([1,2,3,4,5,6,7,8,9,10,24,56,65,69], 23))
+
+/** Visual explanation of the algorithm when searching for 23 */
+// [1,2,3,4,5,6,7,8,9,10,24,56,65,69]
+// { start: 0, mid: 7, end: 13 }
+// [9,10,24,56,65,69]
+// { start: 8, mid: 11, end: 13 }
+// [9,10,24]
+// { start: 8, mid: 9, end: 10 }
+// [24]
+// { start: 10, mid: 10, end: 10 }
