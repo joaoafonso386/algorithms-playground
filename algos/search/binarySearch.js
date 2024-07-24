@@ -44,3 +44,4 @@ console.log(binarySearch([1,2,3,4,5,6,7,8,9,10,24,56,65,69], 23))
 // { start: 8, mid: 9, end: 10 }
 // [24]
 // { start: 10, mid: 10, end: 10 }
+// return -1
