@@ -18,7 +18,7 @@ export const validAnagram = (string1, string2) => {
   return isIncluded
 };
 
-validAnagram("anagram", "nagaram");
+console.log(validAnagram("anagram", "nagaram"));
 
 //Using frequency counter pattern
 export const validAnagramFC = (first, second) => {
@@ -34,12 +34,14 @@ export const validAnagramFC = (first, second) => {
 
   for (let char of second) {
     if (!dictionaryStr1[char]) {
-      console.log(false);
+      return false
     } else {
       dictionaryStr1[char] -= 1;
     }
   }
 
+  return true
+
 };
 
-validAnagramFC("azz", "zaa");
+console.log(validAnagramFC("cinema", "ice2man"));
