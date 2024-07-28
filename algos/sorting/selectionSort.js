@@ -12,7 +12,7 @@ const selectionSort = (arr) => {
   for (let i = 0; i < arr.length - 1; i++) {
     let min = i
     for (let j = i + 1; j < arr.length; j++) {
-      if (arr[j] < arr[i]) {
+      if (arr[min] > arr[j]) {
           min = j;
         }
     }
@@ -26,4 +26,4 @@ const selectionSort = (arr) => {
   return arr;
 };
 
-console.log(selectionSort([1, 4, 5, 24, 8, 6, 2]));
+console.log(selectionSort([49, 1, 4, 5, 24, 8, 6, 2]));
