@@ -7,6 +7,8 @@
  * PS: the noSwap variable helps to prevent the algorithm from going when the array is already sorted. 
  *     during the nested loop iteration no swaps where made, then the array is already sorted.
  * 
+ * Time complexity: Worst case O(n^2). Best case (with noSwap) O(n)
+ * 
  */
 
 const bubbleSort = (arr) => {
