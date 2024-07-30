@@ -6,11 +6,13 @@
  * 
  */
 
+let num = 10
+
 const fib = (n) => {
     if(n < 2) return n
     return fib(n - 1) + fib(n - 2)
 }
 
-for(let i = 0; i < 10; i++) {
+for(let i = 0; i < num; i++) {
     console.log(fib(i))
 }
