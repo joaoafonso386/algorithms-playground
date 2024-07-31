@@ -8,7 +8,10 @@
  *     In the second iteration min = 1, then arr[1] > arr[2] makes min = 2
  *     In the next iteration arr[2] > arr[3] makes min = 3
  *     In the last iteration arr[3] > arr[4] min remains unchanged
- *     We then swap arr[1] with arr[3] making 8 and 2 swap because i !== min
+ *     We then swap arr[1] with arr[3] making 8 and 2 swap because i !== min 
+ *     
+ *     The i !== min also prevents unnecessary swaps when the value you are trying to sort already in the correct position
+ *     if the condition didn't exist, in the first iteration (where the value 1 is correctly sorted) you would still try to swap arr[i] with arr[min] which would result in arr[0] swapping with arr[0]
  */
 
 const selectionSort = (arr) => {
