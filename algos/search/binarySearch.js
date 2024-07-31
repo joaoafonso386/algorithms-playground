@@ -2,9 +2,13 @@
  * 
  * Binary Search only works on sorted arrays!
  * It is also good to use in cases of a big complete array (pagination kills this)
+ * 
+ * One example solving the problem with a while and one with a for of loop
+ * 
  */
 
 /** 
+ * 
  * Write a function called binarySearch which accepts a sorted array and a value and returns the index at which the value exists. Otherwise, return -1.
  * This algorithm should be more efficient than linearSearch - you can read how to implement it here:
  * 
@@ -26,14 +30,41 @@ const binarySearch = (arr, val) => {
 
         if(val < arr[mid]) end = mid - 1
         if(val > arr[mid]) start = mid + 1
-
+        console.log("iterations")
     }
 
     return -1
 
 }
 
-console.log(binarySearch([1,2,3,4,5,6,7,8,9,10,24,56,65,69], 23))
+console.log(binarySearch([1,2,3,4,5,6,7,8,9,10,24,56,65,69], 188))
+
+
+const binarySearchForLoop = (arr, val) => {
+
+    let start = 0
+    let end = arr.length - 1
+
+    for(let _ of arr) {
+        let mid = Math.round((start + end) / 2)
+
+        if(arr[mid] === val) return true
+        if(start >= end) return -1
+
+        if(arr[mid] > val) {
+            end = mid -1 
+        } else {
+            start = mid + 1
+        }
+
+    }
+
+    return -1 
+
+}
+
+
+console.log(binarySearchForLoop([1,2,3,4,6,10,23,56,89], 144))
 
 /** Visual explanation of the algorithm when searching for 23 */
 
