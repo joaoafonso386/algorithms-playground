@@ -1,7 +1,11 @@
 /**
  *
- * Selection sort finds the minimum value of an iteration and then swaps the current value with the minimum.
- * Instead of storing the value we store the index of the val. At each outer iteration we define a minimum of the first element (i) and then start comparing in each iteration to see if that minimum is surpassed.
+ * Selection sort finds the minimum value of an iteration and then swaps the current value with the minimum
+ * Instead of storing the value we store the index of the val
+ * At each outer iteration we define a minimum of the first element (i) and then start comparing in each iteration to see if that minimum is surpassed
+ * 
+ * Time Complexity: O(n^2)
+ * 
  * 
  * Ex: [1,8,7,2,5] -> to swap 8 with 2 the following happens: (look at the code for this. i starts at 0 and j at i +1 and min = i)
  *     In the first iteration min = 0, then arr[0] > arr[1] makes min = 0
