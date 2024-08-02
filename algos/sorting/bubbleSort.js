@@ -9,6 +9,9 @@
  * 
  * Time complexity: Worst case O(n^2). Best case (with noSwap) O(n)
  * 
+ * @param {number[]} arr 
+ * @returns {number[]} 
+ * 
  */
 
 const bubbleSort = (arr) => {
@@ -28,5 +31,4 @@ const bubbleSort = (arr) => {
     return arr
 }
 
-// console.log(bubbleSort([1,2,13,46,34,20,4,5,3,6,10]))
 console.log(bubbleSort([8,2,4,5,7]))
