@@ -1,16 +1,16 @@
 /**
  * The Bubble sorting algorithm sorts each number to its last possible place until the array is sorted. It "bubbles" values to the end of the array
- * 
+ *
  * Define a function called bubbleSort that takes an array and implements the bubble sorting algorithm. 
  * Return the sorted array at the end
- * 
- * PS: the noSwap variable helps to prevent the algorithm from going when the array is already sorted. 
+ *
+ * PS: The noSwap variable helps to prevent the algorithm from going when the array is already sorted. 
  *     during the nested loop iteration no swaps where made, then the array is already sorted.
- * 
+ *
  * Time complexity: Worst case O(n^2). Best case (with noSwap) O(n)
  * 
  * @param {number[]} arr 
- * @returns {number[]} 
+ * @returns {number[]}
  * 
  */
 
