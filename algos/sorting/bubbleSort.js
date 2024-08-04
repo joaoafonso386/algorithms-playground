@@ -8,6 +8,7 @@
  *     during the nested loop iteration no swaps where made, then the array is already sorted.
  *
  * Time complexity: Worst case O(n^2). Best case (with noSwap) O(n)
+ * Space Complexity: O(1)
  * 
  * @param {number[]} arr 
  * @returns {number[]}

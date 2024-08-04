@@ -3,6 +3,7 @@
  * Insertion sort builds a sorted portion of the array and then we have to position the element we are comparing in the correct place of that sorted portion.
  * 
  * Time Complexity: O(n^2)
+ * Space Complexity: O(1)
  * 
  * Visual representation: Ex: [41,4,19,5,3]  (look at the code)
  *    

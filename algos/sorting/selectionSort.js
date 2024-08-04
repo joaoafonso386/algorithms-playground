@@ -5,6 +5,7 @@
  * At each outer iteration we define a minimum of the first element (i) and then start comparing in each iteration to see if that minimum is surpassed
  * 
  * Time Complexity: O(n^2)
+ * Space Complexity: O(1)
  * 
  * 
  * Ex: [1,8,7,2,5] -> to swap 8 with 2 the following happens: (look at the code for this. i starts at 0 and j at i +1 and min = i)
@@ -16,6 +17,10 @@
  *     
  *     The i !== min also prevents unnecessary swaps when the value you are trying to sort already in the correct position
  *     if the condition didn't exist, in the first iteration (where the value 1 is correctly sorted) you would still try to swap arr[i] with arr[min] which would result in arr[0] swapping with arr[0]
+ * 
+ * @param {number[]} arr 
+ * @returns {number[]}
+ * 
  */
 
 const selectionSort = (arr) => {
