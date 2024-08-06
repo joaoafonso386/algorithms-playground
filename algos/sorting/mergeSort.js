@@ -1,16 +1,3 @@
-/**
- * 
- * 
- */
-
-// const mergeSort = (arr) => {
-
-// }
-
-
-// console.log(mergeSort([3,44,38,5,47,15,36]))
-
-
 const merge = (arr1, arr2) => {
     const final = []
     let i = 0
@@ -24,7 +11,6 @@ const merge = (arr1, arr2) => {
             final.push(arr2[j])
             j++
         } 
-        console.log(arr1[i], arr2[j])
     }
 
     return final
@@ -32,4 +18,42 @@ const merge = (arr1, arr2) => {
 
 }
 
-console.log(merge([1,10,50], [2,14,99,100]))
+function merge2(arr1, arr2){
+    let results = [];
+    let i = 0;
+    let j = 0;
+    while(i < arr1.length && j < arr2.length){
+        if(arr2[j] > arr1[i]){
+            results.push(arr1[i]);
+            i++;
+        } else {
+            results.push(arr2[j])
+            j++;
+        }
+    }
+    while(i < arr1.length) {
+        results.push(arr1[i])
+        i++;
+    }
+    while(j < arr2.length) {
+        results.push(arr2[j])
+        j++;
+    }
+    return results;
+}
+
+
+const mergeSort = (arr) => {
+
+    if(arr.length <= 1) return arr
+    let mid = Math.floor(arr.length / 2)
+    let left = mergeSort(arr.slice(0, mid))
+    let right = mergeSort(arr.slice(mid))
+    return merge(left, right)
+
+}
+
+
+console.log(mergeSort([3,38,5,20,15,1,47]))
+
+
