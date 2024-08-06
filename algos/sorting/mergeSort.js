@@ -53,7 +53,6 @@ const mergeSort = (arr) => {
 
 }
 
-
 console.log(mergeSort([3,38,5,20,15,1,47]))
 
 
