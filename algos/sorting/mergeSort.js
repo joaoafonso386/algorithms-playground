@@ -1,24 +1,4 @@
-const merge = (arr1, arr2) => {
-    const final = []
-    let i = 0
-    let j = 0
-
-    while(i < arr1.length || j < arr2.length) {
-        if(arr1[i] < arr2[j]) {
-            final.push(arr1[i])
-            i++
-        } else {
-            final.push(arr2[j])
-            j++
-        } 
-    }
-
-    return final
-
-
-}
-
-function merge2(arr1, arr2){
+const  merge = (arr1, arr2) => {
     let results = [];
     let i = 0;
     let j = 0;
@@ -39,8 +19,11 @@ function merge2(arr1, arr2){
         results.push(arr2[j])
         j++;
     }
+
     return results;
 }
+
+console.log(merge([2,1,4,5], [8,10,14,79,65,43,21,48]))
 
 
 const mergeSort = (arr) => {
@@ -53,6 +36,6 @@ const mergeSort = (arr) => {
 
 }
 
-console.log(mergeSort([3,38,5,20,15,1,47]))
+// console.log(mergeSort([3,38,5,20,15,1,47]))
 
 
