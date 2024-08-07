@@ -40,6 +40,12 @@ const  merge = (arr1, arr2) => {
 console.log(merge([1,2,4,5], [8,10,14,21,43,48,65,79]))
 
 
+/**
+ * 
+ * @param {number[]} arr 
+ * @returns {number[]}
+ */
+
 const mergeSort = (arr) => {
     
     if(arr.length <= 1) return arr
