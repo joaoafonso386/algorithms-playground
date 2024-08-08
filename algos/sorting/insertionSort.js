@@ -1,6 +1,7 @@
 /**
  * @function insertionSort
- * @description Insertion sort builds a sorted portion of the array and then we have to position the element we are comparing in the correct place of that sorted portion.
+ * @description 
+ * Insertion sort builds a sorted portion of the array and then we have to position the element we are comparing in the correct place of that sorted portion.
  * 
  * Time Complexity: O(n^2)
  * Space Complexity: O(1)
