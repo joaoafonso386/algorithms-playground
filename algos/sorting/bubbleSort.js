@@ -1,5 +1,9 @@
 /**
- * The Bubble sorting algorithm sorts each number to its last possible place until the array is sorted. It "bubbles" values to the end of the array
+ *  
+ * @function bubbleSort
+ * @description 
+ * The Bubble sorting algorithm sorts each number to its last possible place until the array is sorted.
+ * It "bubbles" values to the end of the array
  *
  * Define a function called bubbleSort that takes an array and implements the bubble sorting algorithm. 
  * Return the sorted array at the end

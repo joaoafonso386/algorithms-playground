@@ -1,5 +1,7 @@
 /**
  *
+ * @function selectionSort
+ * @description
  * Selection sort finds the index of the minimum value on an iteration and then swaps the current value with the minimum
  * Instead of storing the value we store the index of the val
  * At each outer iteration we define a minimum of the first element (i) and then start comparing in each iteration to see if that minimum is surpassed
