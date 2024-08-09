@@ -14,6 +14,7 @@
  */
 
 const  merge = (arr1, arr2) => {
+    console.debug("mergeFunc", arr1, arr2)
     let results = [];
     let i = 0;
     let j = 0;
@@ -37,17 +38,20 @@ const  merge = (arr1, arr2) => {
     return results;
 }
 
-console.log(merge([1,2,4,5], [8,10,14,21,43,48,65,79]))
-
-
 /**
+ * 
+ * @function mergeSort
+ * @description
+ * For a step by step example look at folder assets/mergeSortExplanation.png and follow the numbers to visualize the algorithm
+ * split the original array in half -> got to left side of the array -> complete left recursion -> return a merge -> complete right recursion -> return another merge -> merge the 2 merges until the array gets sorted
+ * go to the right side of the array ->  complete left recursion -> return a merge -> complete right recursion -> return another merge -> merge the 2 merges until the array gets sorted
  * 
  * @param {number[]} arr 
  * @returns {number[]}
  */
 
 const mergeSort = (arr) => {
-    
+    console.debug("mergeSort", arr)
     if(arr.length <= 1) return arr
     let mid = Math.floor(arr.length / 2)
     let left = mergeSort(arr.slice(0, mid))
@@ -56,6 +60,6 @@ const mergeSort = (arr) => {
 
 }
 
-console.log(mergeSort([3,38,5,20,15,1,47]))
+console.log(mergeSort([3,38,5,9,14,91,20,15,1,47]))
 
 
