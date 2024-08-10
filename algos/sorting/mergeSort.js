@@ -7,6 +7,7 @@
  * this is will make it stop when you reach the end of the shortest array
  * after that, push the remaining of the longest array in the 2 while loops after. These loops just check if there are still items in one of the arrays and push them
  * 
+ * Time Complexity: O(n)
  *   
  * @param {number[]} arr1 
  * @param {number[]} arr2 
@@ -47,8 +48,17 @@ const  merge = (arr1, arr2) => {
  * split the original array in half -> got to left side of the array -> complete left recursion -> return a merge -> complete right recursion -> return another merge -> merge the 2 merges until the array gets sorted
  * go to the right side of the array ->  complete left recursion -> return a merge -> complete right recursion -> return another merge -> merge the 2 merges until the array gets sorted
  * 
+ * Time Complexity: O(n log n)
+ *                  log n comes from splitting the array into smaller arrays recursively
+ *                  the n comes from the merge function witch is O(n)
+ *                  that results in O(n log n)
+ * 
+ * Space Complexity: O(n)
+ *                   if the array to merge sort gets larger, we store more arrays (as we recursively call mergeSort) having the need for more space
+ * 
  * @param {number[]} arr 
  * @returns {number[]}
+ * 
  */
 
 const mergeSort = (arr) => {
