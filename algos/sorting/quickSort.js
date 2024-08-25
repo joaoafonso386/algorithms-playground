@@ -1,17 +1,9 @@
 /**
  * 
- * Start by creating a pivot function that compares a pivot (first element in the array in this case) with the current iterated element (arr[i]) and add a swapIndex that default to the start (swapIndex = start)
- * If pivot > arr[i] then swap the arr[swapIndex] with arr[i]
+ * The pivot function compares a pivot (first element in the array in this case) with the current iterated element (arr[i]) and adds a swapIndex that default to the start (swapIndex = start)
+ * If pivot > arr[i] then we swap the arr[swapIndex] with arr[i]
  * At the end, swap the element in the swapIndex position (arr[swapIndex]) with arr[start]
- * Return the array
- * 
- * In quick sort, similar to merge sort, we split the array on the pivot point into 2 smaller arrays
- * We sort the left side first until the end recursively and then the right side recursively as well (see merge sort explanation pic in docs/)
- * 
- */
-
-
-/**
+ * Return the index
  * 
  * @param {number[]} arr 
  * @param {number} start 
@@ -42,9 +34,21 @@ const pivot = (arr, start = 0, end = arr.length - 1) => {
 
 }
 
+/**
+ * 
+ * In quick sort, similar to merge sort, we split the array on the pivot point into 2 smaller arrays
+ * We sort the left side first until the end recursively and then the right side recursively as well (see merge sort explanation pic in docs/)
+ *
+ * @param {number[]} arr 
+ * @param {number} start 
+ * @param {number} end 
+ * @returns {number[]} arr
+ * 
+ */
+
 const quickSort = (arr, left = 0, right = arr.length - 1) => {
     if(left < right) {
-        let pivotIndex = pivot(arr, left, right) // returns 3
+        let pivotIndex = pivot(arr, left, right)
         quickSort(arr, left, pivotIndex - 1)
         quickSort(arr, pivotIndex + 1, right)
     }
