@@ -5,6 +5,9 @@
  * At the end, swap the element in the swapIndex position (arr[swapIndex]) with arr[start]
  * Return the array
  * 
+ * In quick sort, similar to merge sort, we split the array on the pivot point into 2 smaller arrays
+ * We sort the left side first until the end recursively and then the right side recursively as well (see merge sort explanation pic in docs/)
+ * 
  */
 
 
@@ -34,6 +37,7 @@ const pivot = (arr, start = 0, end = arr.length - 1) => {
     arr[start] = arr[swapIndex]
     arr[swapIndex] = temp
     console.debug("Log array", arr)
+    console.debug("Log returned index", swapIndex)
     return swapIndex
 
 }
