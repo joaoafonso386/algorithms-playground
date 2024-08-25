@@ -7,6 +7,15 @@
  * 
  */
 
+
+/**
+ * 
+ * @param {number[]} arr 
+ * @param {number} start 
+ * @param {number} end 
+ * @returns {number} index
+ */
+
 const pivot = (arr, start = 0, end = arr.length - 1) => {
 
     let pivot = arr[start]
@@ -29,8 +38,14 @@ const pivot = (arr, start = 0, end = arr.length - 1) => {
 
 }
 
-const quickSort = () => {
+const quickSort = (arr, left = 0, right = arr.length - 1) => {
+    if(left < right) {
+        let pivotIndex = pivot(arr, left, right) // returns 3
+        quickSort(arr, left, pivotIndex - 1)
+        quickSort(arr, pivotIndex + 1, right)
+    }
 
+    return arr
 }
 
-console.log(pivot([4,8,2,1,5,7,6,3]))
+console.log(quickSort([4,8,2,1,5,7,6,3]))
