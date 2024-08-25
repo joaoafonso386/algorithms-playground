@@ -1,5 +1,10 @@
 /**
  * 
+ * Start by creating a pivot function that compares a pivot (first element in the array in this case) with the current iterated element (arr[i]) and add a swapIndex that default to the start (swapIndex = start)
+ * If pivot > arr[i] then swap the arr[swapIndex] with arr[i]
+ * At the end, swap the element in the swapIndex position (arr[swapIndex]) with arr[start]
+ * Return the array
+ * 
  */
 
 const pivot = (arr, start = 0, end = arr.length - 1) => {
