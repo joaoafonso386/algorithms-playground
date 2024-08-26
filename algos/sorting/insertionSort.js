@@ -52,6 +52,7 @@ const insertionSort = (arr) => {
             arr[j + 1] = arr[j]
             arr[j] = curr
         }
+        console.debug("array in each iteration", arr)
     }
     return arr
 }

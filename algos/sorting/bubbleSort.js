@@ -23,7 +23,7 @@ const bubbleSort = (arr) => {
     for(let i = arr.length - 1; i >= 0; i--) {
         let noSwap = true;
         for(let j = 0; j < i ; j++) {
-            console.debug("debug", {j: arr[j], i: arr[i], jPlus: arr[j + 1]})
+            console.debug("debug", { j: arr[j], i: arr[i], jPlus: arr[j + 1] })
             if(arr[j] > arr[j + 1]) {
                 let temp = arr[j]
                 arr[j] = arr[j + 1]
