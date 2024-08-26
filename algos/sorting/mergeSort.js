@@ -16,7 +16,7 @@
  */
 
 const  merge = (arr1, arr2) => {
-    console.debug("mergeFunc", arr1, arr2)
+    console.debug("mergeFunc inputs", arr1, arr2)
     let results = [];
     let i = 0;
     let j = 0;
@@ -37,6 +37,7 @@ const  merge = (arr1, arr2) => {
         results.push(arr2[j])
         j++;
     }
+    console.debug("mergeFunc results", results)
     return results;
 }
 

@@ -1,9 +1,11 @@
 /**
  * 
- * The pivot function compares a pivot (first element in the array in this case) with the current iterated element (arr[i]) and adds a swapIndex that default to the start (swapIndex = start)
- * If pivot > arr[i] then we swap the arr[swapIndex] with arr[i]
- * At the end, swap the element in the swapIndex position (arr[swapIndex]) with arr[start]
- * Return the index
+ * @function pivot
+ * @description
+ * the pivot function compares a pivot (first element in the array in this case) with the current iterated element (arr[i]) and adds a swapIndex that default to the start (swapIndex = start)
+ * if pivot > arr[i] then we swap the arr[swapIndex] with arr[i]
+ * at the end, swap the element in the swapIndex position (arr[swapIndex]) with arr[start]
+ * return the index
  * 
  * @param {number[]} arr 
  * @param {number} start 
@@ -36,8 +38,18 @@ const pivot = (arr, start = 0, end = arr.length - 1) => {
 
 /**
  * 
- * In quick sort, similar to merge sort, we split the array on the pivot point into 2 smaller arrays
- * We sort the left side first until the end recursively and then the right side recursively as well (see merge sort explanation pic in docs/)
+ * @function quickSort
+ * @description
+ * in quick sort, similar to merge sort, we split the array on the pivot point into 2 smaller arrays
+ * we sort the left side first until the end recursively and then the right side recursively as well (see merge sort explanation pic in docs/)
+ * 
+ * Time Complexity: O(n log n)
+ *                   log n comes from splitting the array into smaller arrays recursively
+ *                   the n comes from the merge function witch is O(n)
+ *                   that results in O(n log n)
+ * 
+ * Space Complexity: O(n log n)
+ * 
  *
  * @param {number[]} arr 
  * @param {number} start 
