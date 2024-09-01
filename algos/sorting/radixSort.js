@@ -36,6 +36,12 @@ console.log(mostDigits([1234,56,7]))
 
 /**
  * 
+ * Time Complexity: O(nk)
+ *                  n the length of the array
+ *                  k the number of digits (average)
+ * 
+ * Space Complexity: O(n + k)
+ * 
  * @returns 
  */
 
