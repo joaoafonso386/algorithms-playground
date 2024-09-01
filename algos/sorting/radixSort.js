@@ -23,6 +23,17 @@ const digitCount = (num) => {
 
 console.log(digitCount(423))
 
+const mostDigits = (arr) => {
+    let max = 0;
+    for(let num of arr) {
+        max = Math.max(max, digitCount(num))
+    }
+    return max
+}
+
+console.log(mostDigits([1234,56,7]))
+
+
 /**
  * 
  * @returns 
