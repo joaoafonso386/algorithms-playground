@@ -43,9 +43,9 @@ const radixSort = (arr) => {
     let maxDigitCount = mostDigits(arr);
     for(let k = 0; k < maxDigitCount; k++){
         let digitBuckets = Array.from({length: 10}, () => []);
-        for(let i = 0; i < arr.length; i++){
-            let digit = getDigit(arr[i],k);
-            digitBuckets[digit].push(arr[i]);
+        for(let num of arr){
+            let digit = getDigit(num,k);
+            digitBuckets[digit].push(num);
         }
         arr = [].concat(...digitBuckets);
         console.debug(arr)
