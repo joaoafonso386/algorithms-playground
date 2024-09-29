@@ -61,10 +61,10 @@ class SinglyLinkedList {
       if(!this.head) {
         this.head = node
         this.tail = this.head
+      } else {
+        node.next = this.head
+        this.head = node
       }
-      const head = this.head
-      this.head = node
-      this.head.next = head
       this.length++
       return this
     }
