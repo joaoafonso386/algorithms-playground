@@ -80,6 +80,13 @@ class SinglyLinkedList {
       return curr
     }
 
+    set(index, val) {
+      const node = this.get(index)
+      if(!node) return false
+      node.val = val
+      return true
+    }
+
 }
 
 const list = new SinglyLinkedList()
@@ -88,4 +95,7 @@ list.push(10)
 list.push(23)
 list.push(17)
 list.push(125)
-console.log(list.get(3))
+console.log(list.get(4))
+list.set(4, 56)
+
+console.log(list.get(4))
