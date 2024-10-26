@@ -8,11 +8,9 @@
  * after that, push the remaining of the longest array in the 2 while loops after. These loops just check if there are still items in one of the arrays and push them
  * 
  * Time Complexity: O(n)
- *   
  * @param {number[]} arr1 
  * @param {number[]} arr2 
  * @returns {number[]}
- * 
  */
 
 const  merge = (arr1, arr2) => {
@@ -56,10 +54,8 @@ const  merge = (arr1, arr2) => {
  * 
  * Space Complexity: O(n)
  *                   if the array to merge sort gets larger, we store more arrays (as we recursively call mergeSort) having the need for more space
- * 
  * @param {number[]} arr 
  * @returns {number[]}
- * 
  */
 
 const mergeSort = (arr) => {
