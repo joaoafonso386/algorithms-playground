@@ -1,5 +1,5 @@
 class Node {
-    constructor(val, next) {
+    constructor(val, next = null) {
         this.val = val 
         this.next = next 
      } 
@@ -110,6 +110,31 @@ class SinglyLinkedList {
       return removed
     }
 
+    reverse() {
+      let node = this.head
+      this.head = this.tail
+      this.tail = node
+      let next
+      let prev = null
+      for(let i = 0; i < this.length; i++) {
+        next = node.next
+        node.next = prev
+        prev = node
+        node = next
+      }
+      return this
+    }
+
+    print() {
+      let arr = [this.head.val]
+      let curr = this.head
+      while(curr.next) {
+        arr.push(curr.next.val)
+        curr = curr.next
+      }
+      return arr
+    }
+
 }
 
 const list = new SinglyLinkedList()
@@ -118,4 +143,5 @@ list.push(10)
 list.push(23)
 list.push(17)
 list.push(125)
-console.log(list)
+list.reverse()
+console.log(list.print())
