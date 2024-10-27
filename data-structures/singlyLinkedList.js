@@ -100,6 +100,16 @@ class SinglyLinkedList {
       return true
     }
 
+    remove(index) {
+      if(index === 0) this.pop()
+      if(index === this.length - 1) this.shift()
+      const node = this.get(index - 1)
+      const removed = node.next
+      node.next = removed.next
+      this.length--
+      return removed
+    }
+
 }
 
 const list = new SinglyLinkedList()
@@ -108,5 +118,4 @@ list.push(10)
 list.push(23)
 list.push(17)
 list.push(125)
-console.log(list.insert(5, 245))
 console.log(list)
