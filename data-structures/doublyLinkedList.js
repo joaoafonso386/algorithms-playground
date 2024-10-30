@@ -13,7 +13,25 @@ class DounlyLinkedList {
         this.tail = null
     }
 
+    push(val) {
+      const node = new Node(val)
+      if(!this.head) {
+        this.head = node
+        this.tail = this.head
+      } else {
+        this.tail.next = node
+        node.prev = this.tail
+        this.tail = node
+      }
+      this.length++
+      return this
+    }
+
 }
 
 const list = new DounlyLinkedList()
+list.push(12)
+list.push(5)
+list.push(8)
+list.push(10)
 console.log(list)
