@@ -15,9 +15,9 @@ class DounlyLinkedList {
 
     push(val) {
       const node = new Node(val)
-      if(!this.head) {
+      if(this.length === 0) {
         this.head = node
-        this.tail = this.head
+        this.tail = node
       } else {
         this.tail.next = node
         node.prev = this.tail
