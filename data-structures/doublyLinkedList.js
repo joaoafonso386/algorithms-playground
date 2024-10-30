@@ -6,7 +6,7 @@ class Node {
      } 
 }
 
-class DounlyLinkedList {
+class DoublyLinkedList {
     constructor() {
         this.length = 0
         this.head = null
@@ -29,7 +29,7 @@ class DounlyLinkedList {
 
 }
 
-const list = new DounlyLinkedList()
+const list = new DoublyLinkedList()
 list.push(12)
 list.push(5)
 list.push(8)
