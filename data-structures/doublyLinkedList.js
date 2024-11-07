@@ -57,6 +57,20 @@ class DoublyLinkedList {
       return first
     }
 
+    unshift(val) {
+      const node = new Node(val)
+      if(this.length === 0) {
+        this.head = node
+        this.tail = node
+      } else {
+        this.head.prev = node
+        node.next = this.head
+        this.head = node
+      }
+      this.length++
+      return this
+    }
+
 }
 
 const list = new DoublyLinkedList()
@@ -64,5 +78,5 @@ list.push(12)
 list.push(5)
 list.push(8)
 list.push(10)
-list.shift()
-console.log(list)
+list.unshift(7)
+console.log(list.head.next)
