@@ -33,11 +33,11 @@ class DoublyLinkedList {
       if(this.length === 1) {
         this.head = null
         this.tail = null
-        return last
+      } else {
+        this.tail = last.prev
+        this.tail.next = null
+        last.prev = null
       }
-      this.tail = last.prev
-      this.tail.next = null
-      last.prev = null
       this.length--
       return last
     }
@@ -49,5 +49,8 @@ list.push(12)
 list.push(5)
 list.push(8)
 list.push(10)
+list.pop()
+list.pop()
+list.pop()
 list.pop()
 console.log(list)
