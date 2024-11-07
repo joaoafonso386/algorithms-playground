@@ -42,6 +42,21 @@ class DoublyLinkedList {
       return last
     }
 
+    shift() {
+      const first = this.head
+      if(this.length === 0) return undefined
+      if(this.length === 1) {
+        this.head = null
+        this.tail = null
+      } else {
+        this.head = first.next
+        this.head.prev = null
+        first.next = null
+      }
+      this.length--
+      return first
+    }
+
 }
 
 const list = new DoublyLinkedList()
@@ -49,8 +64,5 @@ list.push(12)
 list.push(5)
 list.push(8)
 list.push(10)
-list.pop()
-list.pop()
-list.pop()
-list.pop()
+list.shift()
 console.log(list)
