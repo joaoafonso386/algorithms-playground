@@ -87,6 +87,14 @@ class DoublyLinkedList {
       }
     }
 
+    set(index, val) {
+      const node = this.get(index)
+      console.log(node)
+      if(!node) return false
+      node.val = val
+      return true
+    }
+
 }
 
 const list = new DoublyLinkedList()
@@ -94,5 +102,5 @@ list.push(12)
 list.push(5)
 list.push(8)
 list.push(10)
-console.log(list.get(0))
-// console.log(list.head.next)
+list.set(2, 90)
+console.log(list)
