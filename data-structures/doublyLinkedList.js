@@ -111,6 +111,21 @@ class DoublyLinkedList {
       return true
     }
 
+    remove(index) {
+      if(index < 0 || index >= this.length) return undefined
+      if(index === 0) this.shift(index)
+      if(index === this.length - 1) this.pop(index)
+      const node = this.get(index)
+      const nextNode = node.next
+      const prevNode = node.prev
+      nextNode.prev = prevNode
+      prevNode.next = nextNode 
+      node.next = null
+      node.prev = null
+      this.length--
+      return node
+    }
+
 }
 
 const list = new DoublyLinkedList()
@@ -118,5 +133,5 @@ list.push(12)
 list.push(5)
 list.push(8)
 list.push(10)
-list.insert(2, 90)
-console.log(list)
+list.remove(1)
+console.log(list.head.next)
