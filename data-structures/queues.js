@@ -29,7 +29,14 @@ class Queue {
 
     //remove from the beginning
     dequeue() {
-
+        if(!this.first) return null
+        const q = this.first
+        if(this.first === this.last) {
+            this.last = null
+        }
+        this.first = q.next
+        this.size--
+        return q.val
     }
 }
 
@@ -37,4 +44,5 @@ const q = new Queue()
 q.enqueue(10)
 q.enqueue(11)
 q.enqueue(12)
+q.dequeue()
 console.log(q)
