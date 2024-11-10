@@ -7,3 +7,22 @@
  * Time complexity: O(log n)
  * 
  */
+
+class Node {
+    constructor(val){
+        this.value = val
+        this.left = null
+        this.right = null
+    }
+}
+
+class BinarySearchTree {
+    constructor(){
+        this.root = null    
+    }
+}
+
+const tree = new BinarySearchTree()
+tree.root = new Node(10)
+tree.root.right = new Node(75)
+tree.root.left = new Node(7)
