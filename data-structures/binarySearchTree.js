@@ -29,6 +29,8 @@ class BinarySearchTree {
         }
         let root = this.root
         while(true) {
+            //edge case to ignore duplicates
+            if(node.value === root.value) return undefined
             if(node.value > root.value) {
                 if(!root.right) {
                     root.right = node
