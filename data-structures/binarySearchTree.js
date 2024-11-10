@@ -45,7 +45,21 @@ class BinarySearchTree {
                 root = root.left
             }
         }
+    }
 
+    find(val) {
+        let root = this.root
+        if(!root) return false
+        while(true) {
+            if(root.value === val) return true
+            if(val > root.value) {
+                if(!root.right) return false
+                root = root.right
+            } else {
+                if(!root.left) return false
+                root = root.left
+            }
+        }
     }
 }
 
@@ -56,4 +70,5 @@ tree.root.left = new Node(7)
 tree.root.left.right = new Node(8)
 tree.root.left.left = new Node(5)
 tree.insert(6)
-console.log(tree.root.left)
+console.log(tree.find(75))
+console.log(tree.root)
