@@ -61,6 +61,30 @@ class BinarySearchTree {
             }
         }
     }
+
+    bfs() {
+        if(!this.root) return false
+        let root = this.root
+        const res = []
+        const q = [root]
+        while(q.length > 0) {
+            //shift first because the queue is not empty, if not values will be duplicated 
+            const v = q.shift()
+            res.push(v.value)
+            root = v
+
+            if(root.left) {
+                q.push(root.left)
+            }
+            if(root.right) {
+                q.push(root.right)
+            }
+
+        }
+
+        return res
+
+    }
 }
 
 const tree = new BinarySearchTree()
@@ -70,5 +94,6 @@ tree.root.left = new Node(7)
 tree.root.left.right = new Node(8)
 tree.root.left.left = new Node(5)
 tree.insert(6)
-console.log(tree.find(75))
+const res = tree.bfs()
+console.log(res)
 console.log(tree.root)
