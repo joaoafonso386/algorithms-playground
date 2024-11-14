@@ -83,6 +83,21 @@ class BinarySearchTree {
         }
 
         return res
+    }
+
+    dfsPreOrder() {
+        if(!this.root) return false
+        const res = []
+        let curr = this.root
+        const traverse = (node) => {
+            res.push(node.value)
+            if(node.left) traverse(node.left)
+            if(node.right) traverse (node.right)
+        }
+
+        traverse(curr)
+
+        return res
 
     }
 }
@@ -94,6 +109,6 @@ tree.root.left = new Node(7)
 tree.root.left.right = new Node(8)
 tree.root.left.left = new Node(5)
 tree.insert(6)
-const res = tree.bfs()
+const res = tree.dfsPreOrder()
 console.log(res)
 console.log(tree.root)
