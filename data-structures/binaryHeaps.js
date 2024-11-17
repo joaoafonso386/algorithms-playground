@@ -7,6 +7,7 @@
  *
  *  Time Complexity
  *  Insertion and removal: O(log n), where n is the number of nodes.
+ *  Search: O(n)
  *  Accessing the root (min or max): O(1).
  *
  */
