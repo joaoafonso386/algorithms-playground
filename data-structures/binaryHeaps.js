@@ -25,10 +25,11 @@ class MaxBinaryHeap {
             this.values[i] = this.values[parentIndex]
             this.values[parentIndex] = temp
             i = parentIndex
-            parentIndex = Math.floor((i - 1)/2)
+            parentIndex = Math.floor((parentIndex - 1)/2)
         }   
 
     }  
+
 }
 
 
