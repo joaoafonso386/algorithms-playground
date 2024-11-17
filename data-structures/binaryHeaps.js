@@ -30,10 +30,50 @@ class MaxBinaryHeap {
 
     }  
 
+    extractMax() {
+        if (this.values.length === 0) return null;
+        if (this.values.length === 1) return this.values.pop();
+        
+        const max = this.values[0];
+        this.values[0] = this.values[this.values.length - 1];
+        this.values.pop();
+        
+        let parentIdx = 0;
+        
+        while (true) {
+            let leftChildIdx = 2 * parentIdx + 1;
+            let rightChildIdx = 2 * parentIdx + 2;
+            let swap = null;
+            
+            if (leftChildIdx < this.values.length) {
+                if (this.values[leftChildIdx] > this.values[parentIdx]) {
+                    swap = leftChildIdx;
+                }
+            }
+            
+            if (rightChildIdx < this.values.length) {
+                if (
+                    (swap === null && this.values[rightChildIdx] > this.values[parentIdx]) ||
+                    (swap !== null && this.values[rightChildIdx] > this.values[leftChildIdx])
+                ) {
+                    swap = rightChildIdx;
+                }
+            }
+            
+            if (swap === null) break;
+            
+            [this.values[parentIdx], this.values[swap]] = [this.values[swap], this.values[parentIdx]];
+            parentIdx = swap;
+        }
+        
+        return max;
+    }
+
 }
 
 
 
 const maxBH = new MaxBinaryHeap()
 maxBH.insert(55)
+maxBH.extractMax()
 console.log(maxBH)
