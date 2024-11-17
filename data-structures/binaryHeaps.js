@@ -11,3 +11,28 @@
  */
 
 
+class MaxBinaryHeap {
+    constructor() {
+        this.values = [41,39,33,18,27,12]
+    }
+
+    insert(val) {
+        this.values.push(val)
+        let i = this.values.length - 1
+        let parentIndex = Math.floor((i - 1) / 2)
+        while(i > 0 && this.values[i] > this.values[parentIndex]) {
+            const temp = this.values[i]
+            this.values[i] = this.values[parentIndex]
+            this.values[parentIndex] = temp
+            i = parentIndex
+            parentIndex = Math.floor((i - 1)/2)
+        }   
+
+    }  
+}
+
+
+
+const maxBH = new MaxBinaryHeap()
+maxBH.insert(55)
+console.log(maxBH)
