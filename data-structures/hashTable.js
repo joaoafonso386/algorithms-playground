@@ -26,4 +26,21 @@ class HashTable {
     
         return total
     }
+
+    set(key, val) {
+        const hash = this._hash(key)
+        if(!this.keyMap[hash]) {
+            this.keyMap[hash] = []
+        }
+        this.keyMap[hash].push([key, val])
+    }
 }
+
+const ht = new HashTable(20)
+ht.set('one', 34)
+ht.set('two', 18)
+ht.set('three', 25)
+ht.set('four', 90)
+ht.set('five', 90)
+ht.set('five', 190)
+console.log(ht.keyMap)
