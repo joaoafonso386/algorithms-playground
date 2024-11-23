@@ -58,6 +58,21 @@ class HashTable {
     }
     return res
   }
+
+  values(){
+    const res = []
+    for(let [i,_] of this.keyMap.entries()) {
+      if(this.keyMap[i]) {
+        for(let val of this.keyMap[i]) {
+          const [_,v] = val
+          if(!res.includes(v)) {
+            res.push(v)
+          }
+        }
+      }
+    }
+    return res
+  }
   
 }
 
@@ -70,5 +85,5 @@ ht.set("five", 90);
 ht.set("five2", 190);
 ht.set("five2", 300);
 ht.set("two", 50);
-console.log(ht.keys());
+console.log(ht.values());
 // console.log(ht.keyMap);
