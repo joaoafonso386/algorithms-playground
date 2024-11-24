@@ -85,5 +85,4 @@ ht.set("five", 90);
 ht.set("five2", 190);
 ht.set("five2", 300);
 ht.set("two", 50);
-console.log(ht.values());
-// console.log(ht.keyMap);
+console.log(ht.keyMap);
