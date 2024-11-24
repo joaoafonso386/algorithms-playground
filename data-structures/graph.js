@@ -37,20 +37,43 @@ class Graph {
         }
         delete this.adjancyList[v]
     }
+
+    DFSRecursion(v) {
+        const res = []
+        const visited = {}
+        const helper = (v) => {
+            if(!v) return null
+            visited[v] = true
+            res.push(v)
+            for(let edge of this.adjancyList[v]) {
+                if(!visited[edge]) {
+                    helper(edge)
+                }
+
+            }
+        }
+        helper(v)
+        return res
+    }   
+
+
+
 }
 
 
 const g = new Graph()
-g.addVertex('tokyo')
-g.addVertex('lisbon')
-g.addVertex('paris')
-g.addVertex('madrid')
-g.addVertex('london')
-g.addEdge('tokyo', 'paris')
-g.addEdge('tokyo', 'lisbon')
-g.addEdge('tokyo', 'madrid')
-g.addEdge('paris', 'madrid')
-g.addEdge('london', 'paris')
-g.addEdge('london', 'tokyo')
-g.removeVertex('tokyo')
+g.addVertex('A')
+g.addVertex('B')
+g.addVertex('C')
+g.addVertex('D')
+g.addVertex('E')
+g.addVertex('F')
+g.addEdge('A','B')
+g.addEdge('A','C')
+g.addEdge('B','D')
+g.addEdge('C','E')
+g.addEdge('D','E')
+g.addEdge('D','F')
+g.addEdge('E','F')
+console.log(g.DFSRecursion('A'))
 console.log(g)
