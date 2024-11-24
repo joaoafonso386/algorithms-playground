@@ -16,17 +16,15 @@ class Graph {
         this.adjancyList = {}
     }
 
-    addVertex(val) {
-        if(!this.adjancyList[val]) {
-            this.adjancyList[val] = []
-        }
+    addVertex(vertex) {
+        if(!this.adjancyList[vertex]) this.adjancyList[vertex] = []
     }
+
 }
 
 
 const g = new Graph()
 g.addVertex('tokyo')
 g.addVertex('lisbon')
-g.addVertex('paris')
 g.addVertex('paris')
 console.log(g)
