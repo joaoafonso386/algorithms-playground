@@ -20,6 +20,10 @@ class Graph {
         if(!this.adjancyList[vertex]) this.adjancyList[vertex] = []
     }
 
+    addEdge(v1,v2) {
+        this.adjancyList[v1].push(v2)
+        this.adjancyList[v2].push(v1)
+    }
 }
 
 
@@ -27,4 +31,5 @@ const g = new Graph()
 g.addVertex('tokyo')
 g.addVertex('lisbon')
 g.addVertex('paris')
+g.addEdge('tokyo', 'paris')
 console.log(g)
