@@ -24,6 +24,12 @@ class Graph {
         this.adjancyList[v1].push(v2)
         this.adjancyList[v2].push(v1)
     }
+
+    removeEdge(v1, v2) {
+        this.adjancyList[v1] = this.adjancyList[v1].filter(v => v !== v2)
+        this.adjancyList[v2] = this.adjancyList[v2].filter(v => v !== v1)
+
+    }
 }
 
 
@@ -32,4 +38,6 @@ g.addVertex('tokyo')
 g.addVertex('lisbon')
 g.addVertex('paris')
 g.addEdge('tokyo', 'paris')
+g.addEdge('tokyo', 'lisbon')
+g.removeEdge('tokyo', 'paris')
 console.log(g)
