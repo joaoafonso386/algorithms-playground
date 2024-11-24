@@ -16,8 +16,8 @@ class Graph {
         this.adjancyList = {}
     }
 
-    addVertex(vertex) {
-        if(!this.adjancyList[vertex]) this.adjancyList[vertex] = []
+    addVertex(v) {
+        if(!this.adjancyList[v]) this.adjancyList[v] = []
     }
 
     addEdge(v1,v2) {
@@ -30,6 +30,13 @@ class Graph {
         this.adjancyList[v2] = this.adjancyList[v2].filter(v => v !== v1)
 
     }
+
+    removeVertex(v){
+        for(let edge of this.adjancyList[v]) {
+            this.removeEdge(v, edge)
+        }
+        delete this.adjancyList[v]
+    }
 }
 
 
@@ -37,7 +44,13 @@ const g = new Graph()
 g.addVertex('tokyo')
 g.addVertex('lisbon')
 g.addVertex('paris')
+g.addVertex('madrid')
+g.addVertex('london')
 g.addEdge('tokyo', 'paris')
 g.addEdge('tokyo', 'lisbon')
-g.removeEdge('tokyo', 'paris')
+g.addEdge('tokyo', 'madrid')
+g.addEdge('paris', 'madrid')
+g.addEdge('london', 'paris')
+g.addEdge('london', 'tokyo')
+g.removeVertex('tokyo')
 console.log(g)
