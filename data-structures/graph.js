@@ -13,29 +13,29 @@
 
 class Graph {
     constructor() {
-        this.adjancyList = {}
+        this.adjacencyList = {}
     }
 
     addVertex(v) {
-        if(!this.adjancyList[v]) this.adjancyList[v] = []
+        if(!this.adjacencyList[v]) this.adjacencyList[v] = []
     }
 
     addEdge(v1,v2) {
-        this.adjancyList[v1].push(v2)
-        this.adjancyList[v2].push(v1)
+        this.adjacencyList[v1].push(v2)
+        this.adjacencyList[v2].push(v1)
     }
 
     removeEdge(v1, v2) {
-        this.adjancyList[v1] = this.adjancyList[v1].filter(v => v !== v2)
-        this.adjancyList[v2] = this.adjancyList[v2].filter(v => v !== v1)
+        this.adjacencyList[v1] = this.adjacencyList[v1].filter(v => v !== v2)
+        this.adjacencyList[v2] = this.adjacencyList[v2].filter(v => v !== v1)
 
     }
 
     removeVertex(v){
-        for(let edge of this.adjancyList[v]) {
+        for(let edge of this.adjacencyList[v]) {
             this.removeEdge(v, edge)
         }
-        delete this.adjancyList[v]
+        delete this.adjacencyList[v]
     }
 
     DFSRecursion(v) {
@@ -45,7 +45,7 @@ class Graph {
             if(!v) return null
             visited[v] = true
             res.push(v)
-            for(let edge of this.adjancyList[v]) {
+            for(let edge of this.adjacencyList[v]) {
                 if(!visited[edge]) {
                     helper(edge)
                 }
@@ -54,9 +54,22 @@ class Graph {
         }
         helper(v)
         return res
-    }   
-
-
+    } 
+    
+    DFSIterative(v) {
+        const stack = [v]
+        const res = []
+        const visited = {} 
+        while(stack.length > 0) {
+            const currV = stack.pop()
+            if(!visited[currV]) {
+                visited[currV] = true
+                stack.push(...this.adjacencyList[currV])
+                res.push(currV)
+            }
+        }
+        return res
+    }
 
 }
 
@@ -76,4 +89,5 @@ g.addEdge('D','E')
 g.addEdge('D','F')
 g.addEdge('E','F')
 console.log(g.DFSRecursion('A'))
+console.log(g.DFSIterative('A'))
 console.log(g)
