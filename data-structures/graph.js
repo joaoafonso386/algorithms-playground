@@ -71,6 +71,26 @@ class Graph {
         return res
     }
 
+    BFS(v){
+        const q = [v]
+        const res = []
+        const visited = {}
+        visited[v] = true
+        while(q.length > 0){
+            const currV = q.shift()
+            res.push(currV)
+            for(let v of this.adjacencyList[currV]) {
+                if(!visited[v]){
+                    visited[v] = true
+                    q.push(v)
+                } 
+
+            }
+        }
+
+        return res
+    }
+
 }
 
 
@@ -88,6 +108,5 @@ g.addEdge('C','E')
 g.addEdge('D','E')
 g.addEdge('D','F')
 g.addEdge('E','F')
-console.log(g.DFSRecursion('A'))
-console.log(g.DFSIterative('A'))
+console.log(g.BFS('A'))
 console.log(g)
