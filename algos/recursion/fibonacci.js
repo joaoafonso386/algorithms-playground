@@ -28,6 +28,7 @@ for(let i = 0; i < num; i++) {
 }
 
 //Memoized solution
+//Time Complexity: O(N)
 const visited = {}
 const fibMemoized = (n) => {
     if(n < 2) return n
