@@ -30,7 +30,7 @@ for(let i = 0; i < num; i++) {
 //Memoized solution
 //Time Complexity: O(N)
 const visited = {}
-const fibMemoized = (n) => {
+const fib_memo = (n) => {
     if(n < 2) return n
     if(visited[n]) {
        return visited[n]
@@ -38,4 +38,16 @@ const fibMemoized = (n) => {
         visited[n] = fib(n - 1) + fib(n - 2)
     }
     return fib(n - 1) + fib(n - 2)
+}
+
+
+//Tabulated solution
+//Time Complexity: O(N)
+const fib_table = (n) => {
+    if(n < 2) return n
+    let fibonacci = [0,1,1]
+    for(let i = 3; i < n; i++) {
+        fibonacci[i] = fibonacci[i - 2] + fibonacci[i - 1]
+    }
+    return fibonacci
 }
