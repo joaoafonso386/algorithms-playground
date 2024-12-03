@@ -26,3 +26,15 @@ const fib = (n) => {
 for(let i = 0; i < num; i++) {
     console.log(fib(i))
 }
+
+//Memoized solution
+const visited = {}
+const fibMemoized = (n) => {
+    if(n < 2) return n
+    if(visited[n]) {
+       return visited[n]
+    } else {
+        visited[n] = fib(n - 1) + fib(n - 2)
+    }
+    return fib(n - 1) + fib(n - 2)
+}
