@@ -4,6 +4,14 @@
  * 
  * Ex: n = 10 -> 0,1,1,2,3,5,8,13,21,34
  * 
+ * Explanation for number 5 (fifth number is the sum of the fourth number + third number and so on...)
+ * 
+ * 4 + 3
+ * 3 + 2
+ * 2 + 1
+ * 2 + 1
+ * 1 + 1
+ * 
  */
 
 let num = 10
