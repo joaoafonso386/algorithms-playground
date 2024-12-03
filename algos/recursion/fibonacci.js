@@ -12,6 +12,8 @@
  * 2 + 1
  * 1 + 1
  * 
+ * Time Complexity: O(2^N)
+ * 
  */
 
 let num = 10
