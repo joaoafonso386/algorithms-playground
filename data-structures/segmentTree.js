@@ -1,3 +1,9 @@
+/**
+ * 
+ * For learning reference: https://www.geeksforgeeks.org/introduction-to-segment-trees-2/
+ * 
+ */
+
 class SegmentTree {
     constructor(arr) {
         this.n = arr.length;
