@@ -137,6 +137,6 @@ tree.root.left = new Node(6);
 tree.root.left.right = new Node(8);
 tree.root.left.left = new Node(3);
 tree.insert(20);
-const res = tree.dfsInOrder();
+const res = tree.bfs();
 console.log(res);
 console.log(tree.root);
