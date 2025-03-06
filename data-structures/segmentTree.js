@@ -52,3 +52,6 @@ class SegmentTree {
         return sum;
     }
 }
+
+const st = new SegmentTree([1,2,5,40,23])
+console.log(st)
