@@ -30,8 +30,8 @@ const pivot = (arr, start = 0, end = arr.length - 1) => {
     let temp = arr[start]
     arr[start] = arr[swapIndex]
     arr[swapIndex] = temp
-    console.debug("Log array", arr)
-    console.debug("Log returned index", swapIndex)
+    console.debug("Array", arr)
+    console.debug("Returned index", swapIndex)
     return swapIndex
 
 }
