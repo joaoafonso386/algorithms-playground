@@ -91,6 +91,43 @@ class Graph {
         return res
     }
 
+    /** 
+     * Topological Sort/Kahn's Algorithm (https://en.wikipedia.org/wiki/Topological_sorting#Algorithms) (THIS DOES NOT WORK ON THIS GRAPH BECAUSE IT IS NOT A DAG BY DESIGN)
+     * 
+     * A topological sort of a directed acyclic graph (DAG) is a linear ordering of its vertices such that for every directed edge from vertex 'u' to vertex 'v',
+     * vertex 'u' comes before vertex 'v' in the ordering (A -> B -> C). Incorrect would be (A -> B -> C -> A).
+     * 
+     *  @returns {Array} - A topological sort of the graph
+    */
+    topologicalSort() {
+        const stack = []
+        const visited = {}
+        const res = []
+
+        const helper = (vertice) => {
+            if(!vertice) return null
+            visited[vertice] = true
+            for(let edge of this.adjacencyList[vertice]) {
+                if(!visited[edge]) {
+                    helper(edge)
+                }
+            }
+            stack.push(vertice)
+        }
+
+        for(let vertice in this.adjacencyList) {
+            if(!visited[vertice]) {
+                helper(vertice)
+            }
+        }
+
+        while(stack.length > 0) {
+            res.push(stack.pop())
+        }
+
+        return res
+    }
+
 }
 
 
@@ -108,5 +145,4 @@ g.addEdge('C','E')
 g.addEdge('D','E')
 g.addEdge('D','F')
 g.addEdge('E','F')
-console.log(g.BFS('A'))
-console.log(g)
+console.log(g.topologicalSort())
