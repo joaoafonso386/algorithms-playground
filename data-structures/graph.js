@@ -103,13 +103,18 @@ class Graph {
         const stack = []
         const visited = {}
         const res = []
+        let hasCycle = false
 
         const helper = (vertice) => {
             if(!vertice) return null
             visited[vertice] = true
+
             for(let edge of this.adjacencyList[vertice]) {
                 if(!visited[edge]) {
                     helper(edge)
+                } else {
+                    hasCycle = true
+                    return
                 }
             }
             stack.push(vertice)
@@ -119,7 +124,10 @@ class Graph {
             if(!visited[vertice]) {
                 helper(vertice)
             }
+            if(hasCycle) break
         }
+
+        if(hasCycle) return 'Graph has a cycle'
 
         while(stack.length > 0) {
             res.push(stack.pop())
