@@ -103,36 +103,38 @@ class Graph {
         const stack = []
         const visited = {}
         const res = []
-        let hasCycle = false
-
+    
         const helper = (vertice) => {
-            if(!vertice) return null
-            visited[vertice] = true
-
-            for(let edge of this.adjacencyList[vertice]) {
-                if(!visited[edge]) {
-                    helper(edge)
-                } else {
-                    hasCycle = true
-                    return
+            visited[vertice] = 1
+    
+            for (let neighbor of this.adjacencyList[vertice] || []) {
+                if (visited[neighbor] === 1) {
+                    return true
+                }
+                if (!visited[neighbor]) {
+                    if (helper(neighbor)) {
+                        return true
+                    }
                 }
             }
+    
+            visited[vertice] = 2
             stack.push(vertice)
-        }
-
-        for(let vertice in this.adjacencyList) {
-            if(!visited[vertice]) {
-                helper(vertice)
+            return false
+        };
+    
+        for (let vertice in this.adjacencyList) {
+            if (!visited[vertice]) {
+                if (helper(vertice)) {
+                    return 'Graph has a cycle'
+                }
             }
-            if(hasCycle) break
         }
-
-        if(hasCycle) return 'Graph has a cycle'
-
-        while(stack.length > 0) {
+    
+        while (stack.length > 0) {
             res.push(stack.pop())
         }
-
+    
         return res
     }
 
