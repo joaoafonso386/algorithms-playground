@@ -1,6 +1,27 @@
 /**
  *
  *  A binary heap where each node has at most two children, and it's typically used in implementing priority queues.
+ *  A binary heap is commonly stored in an array or list by placing nodes
+ * 
+ *  The root is at index 0
+ *  The children of node at index 0 are at indices \ and 2
+ *  The children of node at index 1 are at indices 3 and 4
+ *  The children of node at index 2 are at indices 5 and 6
+ *  ... and so on
+ * 
+ *  1. Parent-to-Child Relationship:
+ *  For any node at index 'i' (which is the parent), its LEFT child is at index `2 * i + 1`
+ *  For any node at index 'i' (which is the parent), its RIGHT child is at index `2 * i + 2`
+ * 
+ *  2. Child-to-Parent Relationship:
+ *  If a node (child) is located at index `j` (where j > 1), we want to find its parent's index 'i'.
+ *  This is the inverse of the parent-to-child mapping.
+ *
+ *  Since `j` is a child of `i`, `j` must be either `2 * i` or `2 * i + 1`.
+ *
+ *  If `j` is the Left Child (`j = 2 * i + 1`): Dividing `j` by 2 gives `i = (j - 1) / 2`.
+ *  If `j` is the Right Child (`j = 2 * i + 2`): Subtracting 1 then dividing by 2 gives `i = (j - 2) / 2`.
+ * 
  *  Max Binary Heap: A binary heap where each parent node has a value greater than or equal to its children.
  *  Min Binary Heap: A binary heap where each parent node has a value less than or equal to its children.
  *  Priority Queue: In a Priority Queue, each element has a "priority" associated with it, and elements with higher priorities are served (or dequeued) before elements with lower priorities
@@ -29,7 +50,6 @@ class MaxBinaryHeap {
             i = parentIndex
             parentIndex = Math.floor((parentIndex - 1)/2)
         }   
-
     }  
 
     extractMax() {
@@ -77,7 +97,7 @@ class MaxBinaryHeap {
 
 const maxBH = new MaxBinaryHeap()
 maxBH.insert(55)
-maxBH.extractMax()
+// maxBH.extractMax()
 console.log(maxBH)
 
 

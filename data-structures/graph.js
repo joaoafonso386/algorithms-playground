@@ -134,7 +134,7 @@ class Graph {
         while (stack.length > 0) {
             res.push(stack.pop())
         }
-    
+
         return res
     }
 
