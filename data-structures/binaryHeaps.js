@@ -27,7 +27,7 @@
  *  Priority Queue: In a Priority Queue, each element has a "priority" associated with it, and elements with higher priorities are served (or dequeued) before elements with lower priorities
  *
  *  Time Complexity
- *  Insertion and removal: O(log n), where n is the number of nodes.
+ *  Insertion and Removal: O(log n), where n is the number of nodes.
  *  Search: O(n)
  *  Accessing the root (min or max): O(1).
  *
@@ -99,6 +99,87 @@ const maxBH = new MaxBinaryHeap()
 maxBH.insert(55)
 // maxBH.extractMax()
 console.log(maxBH)
+
+class MinBinaryHeap {
+    constructor(){
+        this.heap = []
+    }
+
+    insert(v) {
+        this.heap.push(v)
+        this.#bubbleUp(this.heap.length - 1)
+    }
+
+    #bubbleUp(length) {
+        let parentIndex = Math.floor((length - 1) / 2)
+        while(length > 0 && this.heap[length] < this.heap[parentIndex]) {
+            const tmp = this.heap[length]
+            this.heap[length] = this.heap[parentIndex]
+            this.heap[parentIndex] = tmp
+            length = parentIndex
+            parentIndex = Math.floor((length - 1) / 2)
+        }
+    }
+
+    extractMin() {
+        if(this.heap.length <= 0) return null
+        const min = this.heap[0]
+        const last = this.heap.pop()
+        this.heap[0] = last
+
+        let parentIdx = 0
+        const len = this.heap.length - 1 
+        while(true) {
+            let rightChildIdx = 2 * parentIdx + 2
+            let leftChildIdx = 2 * parentIdx + 1
+            let smallest = parentIdx
+
+            if(rightChildIdx <= len && this.heap[rightChildIdx] && this.heap[rightChildIdx] < this.heap[smallest]) {
+                smallest = rightChildIdx
+            } 
+
+            if(leftChildIdx <= len && this.heap[leftChildIdx] && this.heap[leftChildIdx] < this.heap[smallest]) {
+                smallest = leftChildIdx
+            } 
+
+            if(smallest === parentIdx) break
+
+            const tmp = this.heap[parentIdx]
+            this.heap[parentIdx] = this.heap[smallest]
+            this.heap[smallest] = tmp
+            
+            parentIdx = smallest
+        }
+        
+        return min
+        
+    }
+
+    peek(){
+        return this.heap.at(0)
+    }
+
+    isEmpty(){
+        return this.heap.length === 0
+    }
+
+    size(){
+        return this.heap.length
+    }
+
+}
+
+const minBH = new MinBinaryHeap()
+minBH.insert(3)
+minBH.insert(14)
+minBH.insert(90)
+minBH.insert(2)
+minBH.insert(16)
+console.log(minBH)
+console.log(minBH.extractMin())
+console.log(minBH.peek())
+console.log(minBH.size())
+console.log(minBH.isEmpty())
 
 
 class Node {
