@@ -46,3 +46,70 @@ q.enqueue(11)
 q.enqueue(12)
 q.dequeue()
 console.log(q)
+
+
+class CircularQueue {
+    constructor(capacity) {
+        this.size = 0
+        this.start = 0
+        this.end = 0
+        this.capacity = capacity
+        this.queue = new Array(capacity).fill(undefined)
+    }
+
+
+    enqueue(val){
+        if(this.isFull()) { 
+            console.log(`Queue is full. ${val} will not be inserted`) 
+            return
+        }
+
+        this.queue[this.end] = val
+        // How many times does 5 go into X (2 from ex), and what is left over? goes 0 times, so 2 % 5 = 2 
+        this.end = (this.end + 1) % this.capacity
+        this.size++
+        return true
+    }
+
+    dequeue(){
+        if(this.isEmpty()) {
+            console.log("Queue is empty. Cannot dequeue") 
+            return
+        }
+        const dequeuedValue = this.queue[this.start] 
+        this.queue[this.start] = undefined
+        this.start = (this.start + 1) % this.capacity
+        this.size--
+        return dequeuedValue
+    } 
+
+    isFull() {
+        return this.size === this.capacity  
+    }
+
+    isEmpty() {
+        return this.size === 0
+    }
+}
+
+
+const cq = new CircularQueue(5)
+cq.enqueue("A")
+cq.enqueue("B")
+cq.enqueue("C")
+cq.enqueue("D")
+cq.dequeue()
+cq.enqueue("F")
+cq.dequeue()
+cq.enqueue("G")
+cq.dequeue()
+cq.dequeue()
+cq.dequeue()
+cq.dequeue()
+cq.enqueue("H")
+cq.enqueue("A")
+cq.enqueue("B")
+cq.enqueue("C")
+cq.enqueue("D")
+cq.dequeue()
+console.log(cq.queue)
