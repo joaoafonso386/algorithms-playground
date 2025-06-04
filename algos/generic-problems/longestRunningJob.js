@@ -1,3 +1,33 @@
+/**
+ *
+ * Problem Title: Longest Running Jobs From Log
+ * 
+ * Problem Description:
+ * 
+ * A job has a name and one or more run instances. Each run instance has a globally unique ID number (runid).
+ * 
+ * You are given a list of input log lines and a positive integer K. The log lines represent events related to job runs. There are two types of log entries:
+ * 
+ * Started: Started name=<job_name> runid=<run_id> - Indicates that a job instance with run_id and associated with job_name has begun.
+ * Ended: Ended runid=<run_id> time=<timestamp> - Indicates that the job instance with run_id has finished at the given timestamp. The timestamp is a positive integer.
+ * Input:
+ * 
+ * A list of strings, log_lines, where each string is a log entry as described above.
+ * An integer, K, representing the number of distinct jobs to output.
+ * Output:
+ * 
+ * Print out the names of the K distinct jobs, along with the longest running individual run instance time for each of those jobs.
+ * 
+ * Important Notes:
+ * 
+ * You should de-duplicate by job name. If a job has multiple run instances, you are interested in the duration of its longest single run instance, not the total time across all its instances.
+ * The output should list the K jobs with the longest individual run times, sorted in descending order of their longest run time. If two jobs have the same longest run time, their relative order does not matter.
+ * The input log lines may not be in chronological order.
+ * Assume all Started run IDs will eventually have a corresponding Ended entry.
+ *
+ *
+ * */
+
 const logs = [
   "Started name=dump_logs runid=f863",
   "Started name=dump_logs runid=g301gas",
