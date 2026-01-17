@@ -10,8 +10,8 @@
  */
 
 let instructor = {
-  firstName: "João",
-  lastName: "Cardoso",
+  firstName: "John",
+  lastName: "Doe",
   favoriteNumbers: [7, 17, 10],
 };
 
@@ -25,4 +25,4 @@ let instructor = {
  * 
  */
 
-let arrNames = ["Jorge", "Carlos", "Miguel"];
+let arrNames = ["Jenny", "Rachel", "George"];
