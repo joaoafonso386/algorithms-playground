@@ -1,5 +1,3 @@
-# Playground for algorithms and data structures studying
-
 <div align="center">
 
 <pre style="white-space: pre; overflow-x: auto;">
